@@ -8,6 +8,10 @@ DB_NAME = 'flats_db.db'
 
 
 def create_db():
+    """
+    The function creates a database.
+    :return:
+    """
     if os.path.exists(DB_NAME):
         os.remove(DB_NAME)
 
@@ -27,17 +31,18 @@ def create_db():
 
 class Pipeline:
     """
-    Класс принимает данные (data)
+    The class accepts and prepares data and saves it to the database
     """
 
     def __init__(self, data):
         self.data = data
+        # connecting to a database
         self.engine = sqlalchemy.create_engine('sqlite:///' + DB_NAME)
 
     def prepares_data(self, row):
         """
-        Ф-ция (зачищает данные) подготавливает данные
-        :return:
+        Prepares data for saving in the database.
+        :return: prepared data in the dictionary
         """
         prepare_data = {}
 
@@ -65,10 +70,13 @@ class Pipeline:
 
         del prepare_data['rooms_floor_area']
 
-        print(prepare_data)
+        # print(prepare_data)
         return prepare_data
 
     def save_data(self):
+        """
+        Connects to the database and saves data.
+        """
         for data in self.data:
             data = self.prepares_data(data)
 
