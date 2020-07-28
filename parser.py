@@ -67,10 +67,10 @@ class Parser:
             date_added_block = block.find('span', class_='date')
 
             d = {
-                'Adress': adress_block.get_text(),
-                'Rooms, Floor, Area': rooms_floor_area_block.get_text(),
-                'Price': price_block.get_text(),
-                'Date added': date_added_block.get_text(),
+                'adress': adress_block.get_text(),
+                'rooms_floor_area': rooms_floor_area_block.get_text(),
+                'price': price_block.get_text(),
+                'date_added': date_added_block.get_text(),
             }
 
             data.append(d)
@@ -98,7 +98,7 @@ class Parser:
         # find the button 'next' that is not active in the pagination
         paginated_block = soup.find('div', class_='pagination clickable')
         button_next = paginated_block.find('button', class_='page-num current-page-num')
-        # print(button_next)  # None
+        print('Next button: ', button_next)  # None
 
         # if pagination is enabled and button next is active
         if self.is_paginate and not button_next:
@@ -144,6 +144,6 @@ class Parser:
         print(html_content)  # Если забанили, показывает капчу
 
         data = self.parse_content(html_content)
-        # print('LEN DATA: ', len(data))
+        print('LEN DATA: ', len(data))
 
         return data
