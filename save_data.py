@@ -1,6 +1,7 @@
 import sqlalchemy
 import os
 
+import re
 from datetime import datetime
 
 
@@ -60,8 +61,8 @@ class Pipeline:
                 prepare_data['floor'] = int(value[1][5:])
                 prepare_data['area'] = int(value[2][4:])
 
-            elif key == 'price' and value.isdigit():
-                pass
+            elif key == 'price' and value[0].isdigit():
+                value = re.search(r"[0-9]+", value).group()
 
             elif key == 'date_added' and '/' in value:
                 value = datetime.strptime(value, '%d/%m/%Y').date()

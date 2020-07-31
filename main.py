@@ -21,7 +21,7 @@ for dic in KEYWORDS:
 
 
 def main():
-    parser = Parser(keywords=list_keywords, is_paginate=False)
+    parser = Parser(keywords=list_keywords, is_paginate=True)
     data = parser.start(list_keywords)
     Pipeline(data).save_data()
 
