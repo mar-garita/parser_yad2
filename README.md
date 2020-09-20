@@ -35,12 +35,13 @@ Run the parser in the console:
 python main.py
 ```
 
-## Информация
+## Information
 
-При многократном запуске парсера сайт https://www.yad2.co.il/ выдаёт капчу и блокирует ваш IP на несколько часов. 
+When you run the parser multiple times, the site https://www.yad2.co.il / issues a captcha and blocks your IP for several hours. 
 
-
-
+##
+##
+##
 
 # parser_yad2
 
