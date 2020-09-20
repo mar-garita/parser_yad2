@@ -1,5 +1,6 @@
 from parser import Parser
 from save_data import Pipeline, create_db
+from settings import ROOMS, PRICE, FLOOR
 
 """
 Main part - launch all
@@ -7,9 +8,9 @@ Main part - launch all
 
 # List of url parameters
 KEYWORDS = [
-    {'rooms': 3},
-    {'price': 4000},
-    {'floor': 2}
+    {'rooms': ROOMS},
+    {'price': PRICE},
+    {'floor': FLOOR}
 ]
 
 list_keywords = []
