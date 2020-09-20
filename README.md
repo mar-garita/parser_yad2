@@ -8,13 +8,14 @@ parser_yad2 парсит квартиры в аренду в Тель-Авиве
 git clone https://github.com/mar-garita/parser_yad2
 
 В фйле main.py указаны параметры поиска квартиры:
-'''
+
+```
 KEYWORDS = [
     {'rooms': 3},
     {'price': 4000},
     {'floor': 2}
 ]
-'''
+```
 'rooms': 3 - количество комнат от 1 до 3
 'price': 4000 - цена от 0 до 4000 шекелей
 'floor': 2 - этаж от 2 и выше
