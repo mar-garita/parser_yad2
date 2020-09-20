@@ -2,6 +2,7 @@ from parser import Parser
 from save_data import Pipeline, create_db
 from settings import ROOMS, PRICE, FLOOR
 
+
 """
 Main part - launch all
 """
